@@ -50,4 +50,5 @@ def main():
             st.error("Please upload an image file")
 
 if __name__ == '__main__':
-    app.run(debug=True, port=port)
+    thread = threading.Thread(target=app.run, kwargs={'debug': True, 'port': port})
+    thread.start()
